@@ -1,0 +1,43 @@
+<div class="container"></div>
+  <div class="MYFORM">
+
+    
+    
+      <div class="nav justify-content-center" style="color: rgb(0, 0, 0);">
+        <h2>COURSE FORM </h2>
+      </div>
+    <div class="container-fluid  "> 
+      <form #course="ngForm" (ngSubmit)="onSubmit(course)">
+        <div class="mb-3">
+          <label for="course_id" class="form-label">COURSE_ID</label>
+          <input type="number" class="form-control" id="course_id" name="course_id" #course_id="ngModel" [(ngModel)]="model.course_id">
+        </div>
+
+        <div class="mb-3">
+          <label for="title" class="form-label">COURSE_TITLE</label>
+          <input type="text" class="form-control" id="title" name="title" #title="ngModel" [(ngModel)]="model.title">
+        </div>
+
+        <div class="mb-3">
+          <label for="DName" class="form-label">DEPARTMENT NAME</label>
+          <input type="text" class="form-control" id="DName" name="DName" #DName="ngModel" [(ngModel)]="model.DName">
+        </div>
+
+        <div class="mb-3">
+          <label for="Credit" class="form-label">TOTAL CREDIT</label>
+          <input type="number" class="form-control" id="Credit" name="Credit" #Credit="ngModel" [(ngModel)]="model.Credit">
+        </div>
+
+        
+
+        <button type="submit" class="btn btn-primary"
+        >Submit</button>
+        <br><br>
+        <button type="button" class="btn btn-danger w-45" (click)="Navigate()">
+          Go Back
+        </button>
+      </form>
+    </div>
+
+  </div>
+

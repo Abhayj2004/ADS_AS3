@@ -1,0 +1,86 @@
+<div class="container"></div>
+  <div class="MYFORM">
+      <div class="nav justify-content-center" style="color: rgb(0, 0, 0);">
+        <h2>SECTION FORM </h2>
+      </div>
+    <div class="container-fluid  "> 
+      <form #section="ngForm" (ngSubmit)="onSubmit(section)">
+        <div class="mb-3">
+          <label for="course_id" class="form-label">COURSE ID</label>
+          <input type="text" class="form-control" id="course_id" name="course_id" #course_id="ngModel" [(ngModel)]="model.course_id">
+        </div>
+
+        <div class="mb-3">
+            <label for="sec_id" class="form-label">SECTION ID</label>
+            <input type="text" class="form-control" id="sec_id" name="sec_id" #sec_id="ngModel" [(ngModel)]="model.sec_id">
+          </div>
+          <div class="mb-3">
+            <label for="semester" class="form-label">SEMESTER</label>
+            <input type="text" class="form-control" id="semester" name="semester"  [(ngModel)]="model.semester">
+          </div>
+          <div class="mb-3">
+            <label for="year" class="form-label">YEAR</label>
+            <input type="number" class="form-control" id="year" name="year" #year="ngModel" [(ngModel)]="model.year">
+          </div>
+
+        <div class="mb-3">
+          <label for="building" class="form-label">BUILDING</label>
+          <input type="text" class="form-control" id="building" name="building" #building="ngModel" [(ngModel)]="model.building">
+        </div>
+        <div class="mb-3">
+            <label for="room_number" class="form-label">ROOM NUMBER</label>
+            <input type="text" class="form-control" id="room_number" name="room_number" #room_number="ngModel" [(ngModel)]="model.room_number">
+          </div>
+
+        <div class="mb-3">
+          <label for="time_slot_id" class="form-label">TIME SLOT ID</label>
+          <input type="text" class="form-control" id="time_slot_id" name="time_slot_id" #time_slot_id="ngModel" [(ngModel)]="model.time_slot_id">
+        </div>
+
+       
+
+        
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <br><br>
+        <button type="button" class="btn btn-danger w-45" (click)="Navigate()">
+          Go Back
+        </button>
+      </form>
+      <div class="mt-5">
+        <h3>Student List</h3>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>COURSE ID</th>
+              <th>SECTION ID</th>
+              <th>SEMESTER</th> 
+              <th>YEAR</th>
+              <th>building</th>
+              <th>ROOM-NUMBER</th>
+              <th>TIME SLOT ID</th>
+              <th>ACTION</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let student of Sections">
+              <td>{{ student.course_id }}</td>
+              <td>{{ student.sec_id }}</td>
+              <td>{{ student.semester }}</td>
+              <td>{{ student.year }}</td>
+              <td>{{ student.building }}</td>
+              <td>{{ student.room_number }}</td>
+              <td>{{ student.time_slot_id }}</td>
+              <td>
+                <button class="btn btn-danger" (click)="deletesection(student.sec_id)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+

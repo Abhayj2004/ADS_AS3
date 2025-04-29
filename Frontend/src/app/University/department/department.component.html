@@ -1,0 +1,41 @@
+<app-form></app-form>
+<div class="container">
+  
+  <div class="MYFORM">
+    <div class="nav justify-content-center">
+      <h2>DEPARTMENT FORM </h2>
+    </div>
+    <div class="container-fluid"> 
+      <form #department="ngForm" (ngSubmit)="onSubmit(department)">
+
+        <div class="mb-3">
+          <label for="DName" class="form-label">DEPARTMENT NAME</label>
+          <input type="text" class="form-control" id="DName" name="DName" #DName="ngModel" [(ngModel)]="model.DName">
+        </div>
+
+        <div class="mb-3">
+          <label for="building" class="form-label">BUILDING</label>
+          <input type="text" class="form-control" id="building" name="building" #building="ngModel" [(ngModel)]="model.building">
+        </div>
+
+        <div class="mb-3">
+          <label for="Budget" class="form-label">BUDGET</label>
+          <input type="number" class="form-control" id="Budget" name="Budget" #Budget="ngModel" [(ngModel)]="model.Budget">
+        </div>
+
+        
+
+        <button type="submit" class="btn btn-primary"
+        >Submit</button>
+        <br><br>
+
+        <button type="button" class="btn btn-danger w-45" (click)="Navigate()">
+          Go Back
+        </button>
+      </form>
+    </div>
+
+  </div>
+
+
+</div>

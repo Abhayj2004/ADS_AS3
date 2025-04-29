@@ -1,0 +1,42 @@
+<app-form></app-form>
+<div class="container">
+    
+    <div class="MYFORM">
+      <div class="nav justify-content-center">
+        <h2>CLASS-ROOM FORM </h2>
+      </div>
+      <div class="container-fluid"> 
+        <form #classroom="ngForm" (ngSubmit)="onSubmit(classroom)">
+  
+          <div class="mb-3">
+            <label for="Building" class="form-label">BUILDING</label>
+            <input type="text" class="form-control" id="Building" name="Building" #Building="ngModel" [(ngModel)]="model.Building">
+          </div>
+  
+          <div class="mb-3">
+            <label for="roomnumber" class="form-label">ROOM-NUMBER</label>
+            <input type="number" class="form-control" id="roomnumber" name="roomnumber" #roomnumber="ngModel" [(ngModel)]="model.roomnumber">
+          </div>
+
+          <div class="mb-3">
+            <label for="capacity" class="form-label">CAPACITY</label>
+            <input type="number" class="form-control" id="capacity" name="capacity" #capacity="ngModel" [(ngModel)]="model.capacity">
+          </div>
+  
+        
+  
+          <button type="submit" class="btn btn-primary"
+           >Submit</button>
+          <br><br>
+  
+          <button type="button" class="btn btn-danger w-45" (click)="Navigate()">
+            Go Back
+          </button>
+  
+        </form>
+      </div>
+  
+    </div>
+  
+  
+  </div>

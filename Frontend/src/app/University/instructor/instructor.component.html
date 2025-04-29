@@ -1,0 +1,68 @@
+<div class="container"></div>
+  <div class="MYFORM">
+  
+    
+      <div class="nav justify-content-center" style="color: rgb(0, 0, 0);">
+        <h2>INSTRUCTOR FORM </h2>
+      </div>
+    <div class="container-fluid  "> 
+      <form #instructor="ngForm" (ngSubmit)="onSubmit(instructor)">
+        <div class="mb-3">
+          <label for="ID" class="form-label">ID</label>
+          <input type="number" class="form-control" id="ID" name="ID" #ID="ngModel" [(ngModel)]="model.ID">
+        </div>
+
+        <div class="mb-3">
+          <label for="name" class="form-label">FULL NAME</label>
+          <input type="text" class="form-control" id="name" name="name" #name="ngModel" [(ngModel)]="model.name">
+        </div>
+
+        <div class="mb-3">
+          <label for="dept_name" class="form-label">DEPARTMENT NAME</label>
+          <input type="text" class="form-control" id="dept_name" name="dept_name" #dept_name="ngModel" [(ngModel)]="model.dept_name">
+        </div>
+
+        <div class="mb-3">
+          <label for="salary" class="form-label">SALARY</label>
+          <input type="number" class="form-control" id="salary" name="salary" #Salary="ngModel" [(ngModel)]="model.salary">
+        </div>
+
+       
+        <button type="submit" class="btn btn-primary"
+         >Submit</button>
+        <br><br>
+        <button type="button" class="btn btn-danger w-45" (click)="Navigate()">
+          Go Back
+        </button>
+      </form>
+  
+      <div class="mt-5">
+        <h3>Student List</h3>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>FULL NAME</th>
+              <th>DEPARTMENT NAME</th>
+              <th>SALARY</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let student of instructors">
+              <td>{{ student.ID }}</td>
+              <td>{{ student.name }}</td>
+              <td>{{ student.dept_name }}</td>
+              <td>{{ student.salary }}</td>
+              <td>
+                <button class="btn btn-danger" (click)="deleteinstructor(student.ID)">Delete</button>
+                <button  class="btn btn-success" (click)="updateinstructor(student.ID)">Update</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+

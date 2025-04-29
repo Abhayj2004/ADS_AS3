@@ -1,0 +1,82 @@
+<!-- <div class="container"></div>
+  <div class="MYFORM">
+
+    
+      <div class="nav justify-content-center" style="color: rgb(0, 0, 0);">
+        <h2>ADVISOR FORM </h2>
+      </div>
+    <div class="container-fluid  "> 
+      <form #advisor="ngForm" (ngSubmit)="onSubmit(advisor)">
+        <div class="mb-3">
+          <label for="S_id" class="form-label">S_ID</label>
+          <input type="number" class="form-control" id="S_id" name="S_id" #S_id="ngModel" [(ngModel)]="model.S_id">
+        </div>
+        <div class="mb-3">
+          <label for="I_id" class="form-label">I_ID</label>
+          <input type="number" class="form-control" id="I_id" name="I_id" #I_id="ngModel" [(ngModel)]="model.I_id">
+        </div>
+
+        
+
+        <button type="submit" class="btn btn-primary"
+         >Submit</button>
+        <br><br>
+        <button type="button" class="btn btn-danger w-45" (click)="Navigate()">
+          Go Back
+        </button>
+      </form>
+
+      <div class="mt-5">
+        <h3>Student List</h3>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>S_ID</th>
+              <th>I_ID</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let student of advisor">
+              <td>{{ student.S_id }}</td>
+              <td>{{ student.I_id }}</td>
+             
+              <td>
+                <button class="btn btn-danger" (click)="deleteadvisor(student.S_id)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+ -->
+
+ <div class="container">
+  <div class="MYFORM">
+    <div class="nav justify-content-center text-black">
+      <h2>ADVISOR LIST</h2>
+    </div>
+    <div class="container-fluid"> 
+      <div class="mt-5">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>S_ID</th>
+              <th>I_ID</th>
+            </tr>
+          </thead>
+        
+          <tbody>
+            <tr *ngFor="let student of advisor">
+              <td>{{ student.s_ID }}</td>
+              <td>{{ student.i_ID }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="btn btn-danger w-45" (click)="Navigate()">Go Back</button>
+</div>
+

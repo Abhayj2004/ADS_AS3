@@ -1,0 +1,70 @@
+<div class="container">
+
+    <div class="MYFORM">
+        <div class="nav justify-content-center">
+            <h2>TIME SLOT </h2>
+        </div>
+        <div class="container-fluid">
+            <form #timeslot="ngForm" (ngSubmit)="onSubmit(timeslot)">
+
+                <div class="mb-3">
+                    <label for="TIME_SLOT_ID" class="form-label">TIME SLOT ID</label>
+                    <input type="text" class="form-control" id="TIME_SLOT_ID" name="TIME_SLOT_ID" #TIME_SLOT_ID="ngModel" [(ngModel)]="model.time_slot_id">
+                </div>
+
+                <div class="mb-3">
+                    <label for="day" class="form-label">DAY</label>
+                    <input type="text" class="form-control" id="day" name="day" #day="ngModel" [(ngModel)]="model.day">
+                </div>
+
+                <div class="mb-3">
+                    <label for="start_time" class="form-label">START TIME</label>
+                    <input type="time" class="form-control" id="start_time" name="start_time" #start_time="ngModel" [(ngModel)]="model.start_time">
+                </div>
+
+                <div class="mb-3">
+                    <label for="end_time" class="form-label">END TIME</label>
+                    <input type="time" class="form-control" id="end_time" name="end_time" #end_time="ngModel" [(ngModel)]="model.end_time">
+                </div>
+
+
+              
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <br><br>
+
+                <button type="button" class="btn btn-danger w-45" (click)="Navigate()">
+                Go Back
+                </button>
+            </form>
+        </div>
+        <div class="mt-5">
+            <h3>Student List</h3>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>TIME_SLOT_ID</th>
+                  <th>DAY</th>
+                  <th>START TIME</th>
+                  <th>END TIME</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let student of instructors">
+                  <td>{{ student.time_slot_id }}</td>
+                  <td>{{ student.day }}</td>
+                  <td>{{ student.start_time }}</td>
+                  <td>{{ student.end_time }}</td>
+                  <td>
+                    <button class="btn btn-danger" (click)="deletetimeslot(student.time_slot_id)">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+    </div>
+
+
+</div>
